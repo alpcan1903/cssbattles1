@@ -1,0 +1,17 @@
+<p></p>
+<p></p>
+<style>
+& {
+  background:linear-gradient(#FFF9C0 20px,#D95362 0 )0 200px;
+  p {
+    width: 60 ;
+    height: 100 ;
+    background:#FFF9C0;
+    margin: 120  162 -260;
+   }
+ p+p {
+    height:30;
+    width:60;
+    background: radial-gradient(1q at 50% 100%,#0000 10px,#FFF9C0 0 30px,#0000 0);
+  }
+  }
