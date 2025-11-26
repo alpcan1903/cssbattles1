@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="arch"></div>
+  <div class="wings"></div>
+</div>
+
+<style>
+  body {
+    background: #5d3a6d; /* Arka plan rengi */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-20px); /* Şekli dikeyde ortalamak için */
+  }
+
+  /* Üstteki Büyük Beyaz Kemer */
+  .arch {
+    width: 140px;
+    height: 70px;
+    background: #ffffff;
+    border-radius: 70px 70px 0 0;
+    position: relative;
+    z-index: 2; /* Kanatların üstünde kalması için */
+  }
+
+  /* Kemerin içindeki mor delik */
+  .arch::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 30px;
+    background: #5d3a6d;
+    border-radius: 30px 30px 0 0;
+  }
+
+  /* Yanlardaki düz yatay kısım */
+  .wings {
+    width: 240px; /* Kemerden daha geniş */
+    height: 20px;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Sol Bacak (Dışa doğru açılan) */
+  .wings::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 100%; /* Yatay kısmın tam altından başlar */
+    width: 80px;
+    height: 20px;
+    background: #ffffff;
+    transform: rotate(-45deg); /* Dışa doğru açı */
+    transform-origin: top left; /* Sol üst köşeden döndür */
+  }
+
+  /* Sağ Bacak (Dışa doğru açılan) */
+  .wings::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 100%; /* Yatay kısmın tam altından başlar */
+    width: 80px;
+    height: 20px;
+    background: #ffffff;
+    transform: rotate(45deg); /* Dışa doğru açı */
+    transform-origin: top right; /* Sağ üst köşeden döndür */
+  }
+</style>
